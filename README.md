@@ -1,6 +1,6 @@
 # node-wrapper
 NodeJS Wrapper for the PSU Api\
-Example Usage:\
+Example Usage:
 ```js
 const api = require('./index.js') // replace with psu-nodejs
 const wrapper = new api('APIKey Here')
