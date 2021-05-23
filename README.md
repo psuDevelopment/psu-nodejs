@@ -20,4 +20,5 @@ async function init() {
 }
 init()
 ```
-Made by Agent#9895
+Made by Agent#9895\
+https://www.npmjs.com/package/psu-nodejs
