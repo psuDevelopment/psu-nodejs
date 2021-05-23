@@ -14,7 +14,7 @@ async function init() {
             "CompressedOutput": false,
             "PremiumFormat": false,
             "ByteCodeMode": "Default"
-        }, true // true for script only, remove if not (or set to false)
+        }, true // true for script return only, remove if you want the json object (or set to false)
     )
     console.log(a)
 }
