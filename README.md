@@ -4,7 +4,7 @@ Example Usage:
 ```js
 const api = require('./index.js') // replace with psu-nodejs
 const wrapper = new api('APIKey Here')
-async function init() {
+(async() => {
     var a = await wrapper.obfuscate("print('e')", {
             "DisableSuperOperators": false,
             "MaximumSecurityEnabled": false,
@@ -17,8 +17,7 @@ async function init() {
         }, true // true for script return only, remove if you want the json object (or set to false)
     )
     console.log(a)
-}
-init()
+})()
 ```
 Made by Agent#9895\
 https://www.npmjs.com/package/psu-nodejs
