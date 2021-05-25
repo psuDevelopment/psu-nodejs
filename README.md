@@ -1,4 +1,4 @@
-# node-wrapper
+# psu-nodejs
 NodeJS Wrapper for the PSU Api\
 Example Usage:
 ```js
