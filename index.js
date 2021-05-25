@@ -7,8 +7,19 @@ class PSUNode {
     getkey() {
         return (this.apikey)
     }
-    async obfuscate(script, options, scriptOnly) {
-        var req = await axios.post('https://api.psu.dev/obfuscate', {
+    async obfuscate(...arg) {
+        if (arg[0] instanceof Array) {
+            let res = []
+            arg.shift().each(async o => {
+                 res.push(obf(o, ...arg))
+            })
+            return Promise.all(res)
+        } else {
+            return obf(...arg)
+        }
+    }
+    async obf(script, options, scriptOnly) {
+        let req = await axios.post('https://api.psu.dev/obfuscate', {
             "script": script,
             "key": this.apikey,
             "options": options
