@@ -3,7 +3,7 @@ NodeJS Wrapper for the PSU Api\
 Example Usage:
 ```js
 const PSU = require('./index.js') // replace with psu-nodejs
-const wrapper = new PSU('APIKey Here');
+const wrapper = new PSU('API Token from psu.dev');
 (async () => {
   let a = await wrapper.obfuscate("print('e')", {
             "DisableSuperOperators": false,
@@ -15,9 +15,9 @@ const wrapper = new PSU('APIKey Here');
             "PremiumFormat": false,
             "ByteCodeMode": "Default"
         }, true // true for script return only, remove if you want the json object (or set to false)
-    ) console.log(a)
-  }
+    )
   console.log(a)
+  
   
   let b = await wrapper.obfuscate(["print('e')","print('xd')", "print(game.Players.LocalPlayer.name)"], {
             "DisableSuperOperators": false,
@@ -32,7 +32,7 @@ const wrapper = new PSU('APIKey Here');
     )
     // returns an array of promises
     console.log(...b)
-  }
+
 })()
 ```
 Made by Agent#9895 & improved by 1nch#6969\
