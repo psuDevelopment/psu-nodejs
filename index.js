@@ -7,17 +7,6 @@ class PSUNode {
     getkey() {
         return (this.apikey)
     }
-    async obfuscate(...arg) {
-        if (arg[0] instanceof Array) {
-            let res = []
-            arg.shift().each(async o => {
-                 res.push(obf(o, ...arg))
-            })
-            return Promise.all(res)
-        } else {
-            return obf(...arg)
-        }
-    }
     async obf(script, options, scriptOnly) {
         let req = await axios.post('https://api.psu.dev/obfuscate', {
             "script": script,
@@ -30,6 +19,18 @@ class PSUNode {
             return req.data
         }
     }
-}
+    async obfuscate(...arg) {
+        if (arg[0] instanceof Array) {
+            let res = []
+            arg.shift().forEach(async o => {
+                 res.push(this.obf(o, ...arg))
+            })
+            return Promise.all(res)
+        } else {
+            return this.obf(...arg)
+        }
+    }
 
+}
+// fixed errors, do not remove this. from obf function. nigger
 module.exports = PSUNode;
