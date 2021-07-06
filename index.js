@@ -12,7 +12,9 @@ class PSUNode {
             "script": script,
             "key": this.apikey,
             "options": options
-        })
+        }).catch(function(error) {
+            return error.response.data.reason
+        });
         if (scriptOnly) {
             return req.data.data
         } else {
